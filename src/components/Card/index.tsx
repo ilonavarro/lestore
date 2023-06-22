@@ -7,7 +7,7 @@ export default function Card({ Product }: { Product: IProduct }) {
       <div>
         <Image src={Product.image} alt={Product.title} width={100} height={112} />
       </div>
-      <p>Title: {Product.title}</p>
+      <h2>{Product.title}</h2>
       <p>Description: {Product.description}</p>
       <p>Price: {Product.price}</p>
       <p>Category: {Product.category}</p>
