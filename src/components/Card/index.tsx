@@ -3,12 +3,11 @@ import Image from 'next/image'
 
 export default function Card({ Product }: { Product: IProduct }) {
   return (
-    <div className='w-full flex flex-col items-center justify-center bg-slate-200 border border-gray-300 rounded-lg p-4'>
+    <div className='w-full flex flex-col items-center bg-slate-200 border border-gray-300 rounded-lg p-4'>
       <div>
         <Image src={Product.image} alt={Product.title} width={100} height={112} />
       </div>
-      <h2>{Product.title}</h2>
-      <p>Description: {Product.description}</p>
+      <h2 className='text-xl font-bold mt-4 text-center'>{Product.title}</h2>
       <p>Price: {Product.price}</p>
       <p>Category: {Product.category}</p>
       <p>Rating</p>

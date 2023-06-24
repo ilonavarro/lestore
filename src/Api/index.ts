@@ -12,17 +12,17 @@ export async function apiCall(url: string) {
   return data
 }
 
-export async function Products() {
+export async function ProductsApi() {
   const data = await apiCall(api)
   return data as IProduct[]
 }
 
-export async function Product(id: number) {
+export async function ProductApi(id: number) {
   const data = await apiCall(`${api}/${id}`)
   return data
 }
 
-export async function Categories() {
+export async function CategoriesApi() {
   const data = await apiCall(`${api}/categories`)
   return data
 }
