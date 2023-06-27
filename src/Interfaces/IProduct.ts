@@ -10,3 +10,12 @@ export interface IProduct {
     count: number
   }
 }
+
+export interface SearchFieldProps {
+  search: string
+  setSearch: (search: string) => void
+}
+
+export interface ICategories {
+  title: string
+}
