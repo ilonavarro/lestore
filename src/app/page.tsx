@@ -1,6 +1,7 @@
 import { ProductsApi } from '@/Api'
 import { IProduct } from '@/Interfaces/IProduct'
 import Card from '@/components/Card'
+import Category from '@/components/Category'
 
 import Products from '@/components/Products'
 import SearchBar from '@/components/SearchBar'
@@ -8,13 +9,17 @@ import SearchBar from '@/components/SearchBar'
 
 export default async function Home() {
   const allProducts = await ProductsApi()
-  const isDataEmpty =
-    !Array.isArray(allProducts) || allProducts.length === 0 || !allProducts
+  const isDataNotEmpty = !(
+    !Array.isArray(allProducts) ||
+    allProducts.length === 0 ||
+    !allProducts
+  )
 
   return (
     <main className='w-full flex flex-col items-center justify-center'>
+      <Category />
       <SearchBar />
-      {!isDataEmpty ? (
+      {isDataNotEmpty ? (
         <section>
           <div className='grid grid-cols-12 p-12'>
             {allProducts.map((item: IProduct) => (

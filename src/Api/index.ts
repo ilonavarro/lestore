@@ -26,3 +26,8 @@ export async function CategoriesApi() {
   const data = await apiCall(`${api}/categories`)
   return data
 }
+
+export async function CategoriesProducts(category: string) {
+  const data = await apiCall(`${api}/category/${category}`)
+  return data
+}
