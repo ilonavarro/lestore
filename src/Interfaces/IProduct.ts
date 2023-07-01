@@ -19,3 +19,7 @@ export interface SearchFieldProps {
 export interface ICategories {
   title: string
 }
+
+export interface searchParams {
+  filter: string
+}

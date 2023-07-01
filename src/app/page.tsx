@@ -1,14 +1,17 @@
 import { ProductsApi } from '@/Api'
-import { IProduct } from '@/Interfaces/IProduct'
-import Card from '@/components/Card'
+import { searchParams } from '@/Interfaces/IProduct'
 import Products from '@/components/Products'
 
-export default async function Home() {
+interface CategoryHomeProps {
+  searchParams?: searchParams
+}
+
+export default async function Home({ searchParams }: CategoryHomeProps) {
   const allProducts = await ProductsApi()
 
   return (
     <>
-      <Products Products={allProducts} />
+      <Products Products={allProducts} searchParams={searchParams} />
     </>
   )
 }
