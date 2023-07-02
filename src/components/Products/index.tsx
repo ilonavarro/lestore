@@ -34,7 +34,7 @@ export default function Products({ Products, searchParams }: ProductsProps) {
 
           <div className='grid grid-cols-12 p-12 pt-0'>
             {sortedProducts.map(item => (
-              <div key={item.id} className='col-span-6 p-2'>
+              <div key={item.id} className='col-span-6 p-2 bg-red-950'>
                 <Card Product={item} />
               </div>
             ))}
