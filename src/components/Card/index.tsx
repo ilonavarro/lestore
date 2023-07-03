@@ -5,19 +5,18 @@ import Link from 'next/link'
 
 export default function Card({ Product }: { Product: IProduct }) {
   return (
-    // <div className='w-full flex flex-col items-center bg-slate-200 border border-gray-300 rounded-lg p-4'>
     <Link href={`/product/${Product.id}`}>
       <div
-        className='w-full flex flex-col items-center bg-slate-200 border border-gray-300 rounded-lg p-4
+        className='w-auto h-auto flex flex-col items-center bg-white border border-gray-300 rounded-lg p-4
     hover:bg-slate-300 hover:border-gray-400'
       >
-        <div>
+        <div className='flex items-center justify-center relative h-48 w-48'>
           <Image
             src={Product.image}
             alt={Product.title}
             width={100}
             height={112}
-            className='w-auto h-auto'
+            className='h-100 w-100'
           />
         </div>
         <h2 className='text-xl font-bold mt-4 text-center'>

@@ -19,7 +19,7 @@ export default function FilterProduct({}) {
   }
 
   return (
-    <div className='w-full flex justify-end pr-16 pb-0 font-bold text-black'>
+    <div className='w-full flex justify-end pr-16 pb-0 font-bold text-black mb-4'>
       <div>
         <button
           className='border border-black/20 p-1 rounded-lg text-xs

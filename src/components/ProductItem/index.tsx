@@ -1,7 +1,7 @@
 import { IProduct } from '@/Interfaces/IProduct'
-import Image from 'next/image'
 import Lightbox from '../Lightbox'
-import RelatedProducts from '../Card/RelatedProducts'
+import RelatedProducts from '../RelatedProducts'
+import AddToCart from '../AddToCart'
 
 export default function ProductItem(product: IProduct) {
   return (
@@ -17,6 +17,9 @@ export default function ProductItem(product: IProduct) {
           <p>
             Rating: {product.rating.rate} Count: {product.rating.count}
           </p>
+          <div>
+            <AddToCart />
+          </div>
         </div>
       </div>
       <RelatedProducts category={product.category} productId={product.id} />

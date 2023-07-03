@@ -27,7 +27,7 @@ export default function Products({ Products, searchParams }: ProductsProps) {
         <section>
           <FilterProduct />
           {searchParams?.filter && (
-            <h2 className='w-full items-center justify-center text-2xl font-bold'>
+            <h2 className='w-full items-center justify-center text-2xl font-bold mb-4'>
               Filtering by: {searchParams.filter}
             </h2>
           )}
