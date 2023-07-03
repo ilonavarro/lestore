@@ -9,31 +9,26 @@ interface AddToCartProps {
 }
 
 export default function AddToCart({ productId }: AddToCartProps) {
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(0)
   const { productsGlobal, setProductsGlobal } = useGlobalContext()
+
+  const addProdToCart = (productId: number, quantity: number) => {
+    setProductsGlobal([
+      ...productsGlobal,
+      { productId: productId, productQuantity: quantity }
+    ])
+    setQuantity(0)
+  }
 
   return (
     <div className='flex flex-col items-center justify-center'>
       <MoreLess quantity={quantity} setQuantity={setQuantity} />
       <button
-        // onClick={() => setProductsGlobal([...productsGlobal, []])}
-        onClick={() =>
-          setProductsGlobal([
-            ...productsGlobal,
-            { productId: productId, productQuantity: quantity }
-          ])
-        }
-        className='bg-black text-white p-2 rounded-md'
+        onClick={() => quantity > 0 && addProdToCart(productId, quantity)}
+        className='bg-red-600 text-white p-2 rounded-md hover:bg-red-900 hover:font-bold'
       >
-        Add to cart {quantity}
+        Add to cart
       </button>
     </div>
   )
 }
-
-/*
-productId: number
-  setProductId: Dispatch<SetStateAction<number>>
-  productQuantity: number
-  setProductQuantity: Dispatch<SetStateAction<number>>
-*/

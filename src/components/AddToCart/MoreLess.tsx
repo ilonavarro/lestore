@@ -8,7 +8,7 @@ export default function MoreLess({ quantity, setQuantity }: MoreLessProps) {
     // <div className='w-full flex items-center space-x-2 bg-red-800'>
     <div className='w-full flex items-center justify-evenly space-x-4 p-4'>
       <button
-        onClick={() => (quantity > 1 ? setQuantity(quantity - 1) : setQuantity(1))}
+        onClick={() => (quantity > 0 ? setQuantity(quantity - 1) : setQuantity(0))}
         className='text-xl font-bold w-8 h-8 text-red-800 border-2  hover:bg-red-800 hover:text-white'
       >
         -
