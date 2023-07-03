@@ -2,12 +2,13 @@
 import { useGlobalContext } from '@/app/Context/store'
 import ProductCartResult from './ProductCartResult'
 
-export default function ProductCart() {
-  const { productsGlobal, setProductsGlobal } = useGlobalContext()
+export default async function ProductCart() {
+  // const { productsGlobal, setProductsGlobal } = useGlobalContext()
+  // console.log(productsGlobal)
 
   return (
     <div>
-      {productsGlobal.length > 0 ? (
+      {/* {productsGlobal.length > 0 ? (
         <div>
           {productsGlobal.map(product => (
             <ProductCartResult
@@ -19,7 +20,7 @@ export default function ProductCart() {
         </div>
       ) : (
         <div>You don &apos; t have any product in your cart</div>
-      )}
+      )} */}
     </div>
   )
 }

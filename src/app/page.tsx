@@ -2,6 +2,11 @@ import { ProductsApi } from '@/Api'
 import { searchParams } from '@/Interfaces/IProduct'
 import Products from '@/components/Products'
 
+export const metadata = {
+  title: 'LEStore',
+  description: 'LEStore'
+}
+
 interface CategoryHomeProps {
   searchParams?: searchParams
 }

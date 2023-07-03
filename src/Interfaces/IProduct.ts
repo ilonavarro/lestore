@@ -9,7 +9,6 @@ export interface IProduct {
     rate: number
     count: number
   }
-  quantity?: number
 }
 
 export interface SearchFieldProps {

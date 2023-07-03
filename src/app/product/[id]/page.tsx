@@ -1,7 +1,12 @@
 import { ProductApi } from '@/Api'
 import { IProduct } from '@/Interfaces/IProduct'
 import ProductItem from '@/components/ProductItem'
-import Image from 'next/image'
+import { Metadata, ResolvingMetadata } from 'next'
+
+export const metadata = {
+  title: 'Product | LEStore',
+  description: 'Product Page | LEStore'
+}
 
 interface ProductPageProps {
   params: {
@@ -12,7 +17,6 @@ interface ProductPageProps {
 export default async function Product({ params }: ProductPageProps) {
   const productID = params.id
   const product = (await ProductApi(productID)) as IProduct
-  // const product = false
   return (
     <div>
       {product ? (
