@@ -6,7 +6,7 @@ import UserBar from '../UserBar'
 export default function Header() {
   return (
     <>
-      <header className='flex flex-col justify-center items-center border-b border-b-gray-300 p-4'>
+      <header className='flex flex-col justify-center items-center p-4'>
         <UserBar />
         <div>
           <Link href='/'>

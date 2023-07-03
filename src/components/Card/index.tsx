@@ -12,7 +12,13 @@ export default function Card({ Product }: { Product: IProduct }) {
     hover:bg-slate-300 hover:border-gray-400'
       >
         <div>
-          <Image src={Product.image} alt={Product.title} width={100} height={112} />
+          <Image
+            src={Product.image}
+            alt={Product.title}
+            width={100}
+            height={112}
+            className='w-auto h-auto'
+          />
         </div>
         <h2 className='text-xl font-bold mt-4 text-center'>
           <ProductNameFilter name={Product.title} />

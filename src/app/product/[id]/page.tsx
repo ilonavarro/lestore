@@ -1,13 +1,25 @@
 import { ProductApi } from '@/Api'
-import React from 'react'
+import { IProduct } from '@/Interfaces/IProduct'
+import ProductItem from '@/components/ProductItem'
+import Image from 'next/image'
 
-export default async function Product() {
-  const product = await ProductApi(1)
+interface ProductPageProps {
+  params: {
+    id: number
+  }
+}
+
+export default async function Product({ params }: ProductPageProps) {
+  const productID = params.id
+  const product = (await ProductApi(productID)) as IProduct
+  // const product = false
   return (
     <div>
-      <p>Price: {product.price}</p>
-      <p>Category: {product.category}</p>
-      <p>Rating: {product.rating.rate}</p>
+      {product ? (
+        <ProductItem {...product} />
+      ) : (
+        <div className='flex justify-center font-extrabold pt-12'>Product not found</div>
+      )}
     </div>
   )
 }
