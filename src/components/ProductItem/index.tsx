@@ -18,7 +18,7 @@ export default function ProductItem(product: IProduct) {
             Rating: {product.rating.rate} Count: {product.rating.count}
           </p>
           <div>
-            <AddToCart />
+            <AddToCart productId={product.id} />
           </div>
         </div>
       </div>
